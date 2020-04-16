@@ -3,8 +3,10 @@
 import os
 import datetime
 import logging
-from common.handle_config import conf
-from common.handle_path import LOG_DIR
+from common.handle_config import HandleConfig
+from common.handle_path import LOG_DIR, CONF_DIR
+
+conf = HandleConfig(os.path.join(CONF_DIR, "config.ini"))
 
 
 class HandleLog(object):
@@ -13,15 +15,15 @@ class HandleLog(object):
     def create_logger():
         date = datetime.datetime.now().strftime("%m_%d_%H_%M_%S_")
         # 创建收集器，设置收集器的等级
-        my_log = logging.getLogger(conf.get("logs", "name"))
-        my_log.setLevel(conf.get("logs", "level"))
+        my_log = logging.getLogger(conf.get("log", "name"))
+        my_log.setLevel(conf.get("log", "level"))
         # 创建输出到控制台的渠道，设置等级
         sh = logging.StreamHandler()
-        sh.setLevel(conf.get("logs", "sh_level"))
+        sh.setLevel(conf.get("log", "sh_level"))
         my_log.addHandler(sh)
         # 创建输出到文件的渠道，设置等级
-        fh = logging.FileHandler(filename=os.path.join(LOG_DIR, date + "logs.logs"), encoding="utf-8")
-        fh.setLevel(conf.get("logs", "fh_level"))
+        fh = logging.FileHandler(filename=os.path.join(LOG_DIR, date + "log.log"), encoding="utf-8")
+        fh.setLevel(conf.get("log", "fh_level"))
         my_log.addHandler(fh)
         # 设置日志输出格式
         output_format = '%(asctime)s - [%(filename)s-->line:%(lineno)d] - %(levelname)s: %(message)s'

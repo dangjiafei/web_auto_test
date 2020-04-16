@@ -375,10 +375,10 @@ table       { font-size: 100%; }
     <td class='%(style)s'><div class='testcase'>%(desc)s</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 -Findyou
-    <button id='btn_%(tid)s' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_%(tid)s'>%(status)s</button>
+    <button id='btn_%(tid)s' type="button"  class="btn btn-danger btn-xs collapsed" testdatas-toggle="collapse" testdatas-target='#div_%(tid)s'>%(status)s</button>
     <div id='div_%(tid)s' class="collapse">  -->
     <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_%(tid)s' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_%(tid)s'>%(status)s</button>
+    <button id='btn_%(tid)s' type="button"  class="btn btn-danger btn-xs" testdatas-toggle="collapse" testdatas-target='#div_%(tid)s'>%(status)s</button>
     <div id='div_%(tid)s' class="collapse in" align="left">
     <pre>
     %(script)s

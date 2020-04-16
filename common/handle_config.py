@@ -1,8 +1,5 @@
 # 该文件处理配置文件的读取和写入
-
-import os
 from configparser import ConfigParser
-from common.handle_path import CONF_DIR
 
 
 class HandleConfig(ConfigParser):
@@ -16,6 +13,3 @@ class HandleConfig(ConfigParser):
         """写入数据的方法"""
         self.set(section, options, value)
         self.write(fp=open(self.filename, "w"))
-
-
-conf = HandleConfig(os.path.join(CONF_DIR, "config.ini"))
