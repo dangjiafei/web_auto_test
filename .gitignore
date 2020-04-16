@@ -1,0 +1,8 @@
+# pycharm
+.idea/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pip freeze > requirements.txt
