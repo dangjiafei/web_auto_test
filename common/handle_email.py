@@ -1,9 +1,13 @@
 # 该文件处理email邮件的发送
+import os
 import smtplib
+from common.handle_path import CONF_DIR
 from email.mime.text import MIMEText
-from common.handle_config import conf
+from common.handle_config import HandleConfig
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
+
+conf = HandleConfig(os.path.join(CONF_DIR, "config.ini"))
 
 
 class SendEmail:
