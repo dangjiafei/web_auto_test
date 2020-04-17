@@ -13,14 +13,6 @@ class BasePage(object):
     def __init__(self, driver: Chrome):
         self.driver = driver
 
-    def screen_shot(self, error_info):
-        """保存截图"""
-        img_path = Setting.img_path
-        filename = error_info + '.png'
-        file = os.path.join(img_path, filename)
-        self.driver.save_screenshot(file)
-        return file
-
     def get_element(self, locator):
         """查找元素"""
         try:
@@ -30,6 +22,14 @@ class BasePage(object):
             log.error("查找元素失败")
             log.exception(e)
             raise e
+
+    def screen_shot(self, error_info):
+        """保存截图"""
+        img_path = Setting.img_path
+        filename = error_info + '.png'
+        file = os.path.join(img_path, filename)
+        self.driver.save_screenshot(file)
+        return file
 
     def wait_clickable_element(self, locator, timeout=30, poll=0.2):
         """等待元素可以被点击"""
@@ -101,7 +101,7 @@ class BasePage(object):
         """i_frame的切换"""
         self.driver.switch_to.frame(name)
 
-    def double_ele_click(self, locator):
+    def double_click(self, locator):
         """双击操作"""
         try:
             e = self.wait_clickable_element(locator)

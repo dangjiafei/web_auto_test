@@ -7,5 +7,5 @@ class HomePage(BasePage):
 
     def get_user_info(self):
         """获取账号信息"""
-        user_ele = self.get_element(*self.user_locator)
+        user_ele = self.get_element(self.user_locator)
         return user_ele.text

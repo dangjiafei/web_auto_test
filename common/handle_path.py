@@ -6,10 +6,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 用例模块目录的路径
-CASE_DIR = os.path.join(BASE_DIR, "testcases")
+CASE_DIR = os.path.join(BASE_DIR, "test_cases")
 
 # 用例数据目录的路径
-DATA_DIR = os.path.join(BASE_DIR, "testdatas")
+DATA_DIR = os.path.join(BASE_DIR, "test_datas")
 
 # 测试报告目录的路径
 REPORT_DIR = os.path.join(BASE_DIR, "reports")

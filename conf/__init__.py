@@ -1,4 +1,4 @@
-"""配置文件ini, yaml, py文件  constant.py"""
+"""配置文件ini, yaml, py文件"""
 import os
 
 
