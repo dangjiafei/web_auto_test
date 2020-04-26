@@ -7,7 +7,7 @@ from selenium import webdriver
 @pytest.fixture(scope="class")
 def init_web():
     """
-    # 设置无头浏览器的路径, 如果需要集成jenkins，需要次步骤让jenkins发现浏览器并执行
+    # 设置无头浏览器的路径, 如果需要集成jenkins，需要此步骤让jenkins发现浏览器并执行
     from selenium.webdriver import ChromeOptions
     option = ChromeOptions()
     option.binary_location = r"C:\Users\AAA\AppData\Local\Google\Chrome\Application\chrome.exe"
